@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+  profiles:
+    active: dev
+
+server:
+  port: 8080
+
+app:
+  jwt-secret: ${JWT_SECRET}
+  internal-token: ${INTERNAL_TOKEN}
+  data-api-url: http://data-api:8081/api/transform
